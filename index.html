@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>For The Pursuit of Trivia</title>
+  <meta name="description" content="Have you found yourself wanting to play more trivia quizes online? Come play mine!">
+  <meta name="author" content="RC Maples">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="./float-grid.css">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <!-- Images Used through Creative Commons license.
+      Sergery Saakyan, Studio Fibonacci, Pietro Bonura
+      parkjisun, Gregor Cresnar, gem.icons, Kate Kobielsky
+      Icons Producer, moRiza; from the Noun Project.
+   -->
+  <header role="banner">
+    <div class="row">
+      <div class="col-12">
+        <h1>For the Pursuit of Trivia</h1>
+        <p>A Quiz Game...</p>
+        <div class="js-score-board js-questions-hidden">Score: 0</div>
+        <div class="bottom-border"></div>
+      </div>
+    </div>
+  </header>
+
+  <main role="main"> <!-- main content -->
+
+    <section class="row js-start-unhidden"> <!-- this first section is the 'start page' -->
+
+      <div class="col-8">
+      <!-- The following two divs contain the starting text and icon image -->
+        <div class="appStart">
+          <p>Welcome to the Pursuit of Trivia, where the rules are made up and the points don't matter. Today's game will quiz you on Mythology!</p>
+          <p>Rules: 10 questions for 10 points each. Good Luck!</p>
+        </div>
+
+        <div class="questionIcon">
+          <img alt="Graphic of a head with a question mark" src="./images/question.svg">
+          <!-- This will hold the icon imagery. -->
+        </div>
+
+        <!-- The following form is used to start the game. -->
+        <form id="js-quiz-start" action="#" method="GET" >
+          <fieldset>
+            <legend class="clip">Get Started!</legend>
+            <button type="submit" name="js-quiz-start" class="js-quiz-start">Let's Play!</button>
+          </fieldset>
+        </form>
+        </div> <!-- end the app start 8-column wrapper div -->
+    </section> <!-- end the start page section -->
+
+
+    <section class="row js-questions-hidden"> <!-- begin the second section the "quiz" portion if you will. -->
+
+      <div class="col-8"> <!-- begin 8 column wrapper div -->
+        <form id="js-quiz-answers" action="#" method="GET">
+          <fieldset>
+
+            <div class="questionBlock">
+              <legend>The question failed to load.</legend>
+            </div>
+            <div class="questionIcon"><!-- Gimme an icon. --></div>
+
+            <button type="submit" name="js-quiz-answer-1" data-label="1" data-correctAnswer="true">We Love to See You Smile</button>
+            <button type="submit" name="js-quiz-answer-2" data-label="2" data-correctAnswer="true">Why Pay More!?</button>
+            <button type="submit" name="js-quiz-answer-3" data-label="3" data-correctAnswer="true">Have It Your Way</button>
+            <button type="submit" name="js-quiz-answer-4" data-label="4" data-correctAnswer="true">Making People Happy Through Food</button>
+
+          </fieldset>
+        </form>
+      </div>
+
+
+
+      <!-- this concludes the 8 column div portion -->
+      <!-- the following 3 column div presents out progress bar -->
+      <div class="col-3 js-hidden">
+      <progress class="js-progress-bar" max="1.0" value="0.4" data-label="40% Complete" data-small_label="40%"></progress>
+      </div>
+    </section> <!-- this ends the question 'page' of our quiz game. -->
+
+    <section class="row js-results-hidden"> <!-- this final section is the 'results page' -->
+      <div class="col-8">
+      <!-- The following two divs contain the starting text and icon image -->
+        <div class="resultsContainer">
+          <p class="js-results-text">Congratulations! You know so much about mythology!</p>
+          <p class="js-results-score">Your final score is 30/100!</p>
+        </div>
+
+        <div class="js-results-icon">
+          <img alt="Let's Celebrate" src="./images/tada.svg">
+        </div>
+          <!-- The following form is used to retart the game. -->
+          <form id="js-quiz-restart" action="#" method="GET" >
+            <fieldset>
+              <legend class="clip">Let's play again!</legend>
+              <button type="submit" name="js-quiz-restart" class="js-quiz-restart">Try again!</button>
+            </fieldset>
+          </form>
+        </div> <!-- end the app results 8-column wrapper div -->
+    </section> <!-- end the results page section -->
+  </main>
+
+
+  <!-- Response Modals; Hidden due to imported css and jquerymodal js-->
+  <div class="modal js-correct-answer-modal">
+    <p>You got it right! You're smart :D</p>
+    <a href="#close-modal" rel="modal:close" class="js-modal-notTheLastQuestion">Next Question</a>
+  </div>
+  <div class="modal js-incorrect-answer-modal">
+    <p>You got it Wrong! womp womp</p>
+    <a href="#close-modal" rel="modal:close" data-label="incorrect" class="js-modal-notTheLastQuestion">Next Question</a>
+  </div>
+
+  <script src="./app.js"></script>
+  <script src="./store.js"></script>
+</body>
+</html>

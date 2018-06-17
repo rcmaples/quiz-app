@@ -1,0 +1,352 @@
+/*
+ * Date:   2018-05-22
+ * Author: RC Maples
+ * Description: This is the main CSS page for ../quiz-app/index.html
+ * * * */
+
+/*** We use boder-box around these parts ***/
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+
+/*** Some General Ground Rules ***/
+body {
+	font-family: 'Source Scans Pro', 'Calibri', 'Helvetica', sans-serif;
+	background-color: #FFF;/*#80DEEA;*/
+	color: #424242;
+}
+
+.js-start-hidden {
+	visibility: hidden;
+	height: 0px;
+	position:absolute;
+	top: -10000px;
+	/*right: -1000px;*/ /* the right offsets cause horizontal scrolling. Disabled. */
+}
+
+.js-questions-hidden {
+	visibility: hidden;
+	height: 0px;
+	position:absolute;
+	top: -10000px;
+	/*right: -1000px;*/
+}
+
+.js-results-hidden {
+	visibility: hidden;
+	height: 0px;
+	position:absolute;
+	top: -10000px;
+	/*right: -1000px;*/
+}
+
+.clip {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+fieldset {
+	border: none;
+}
+
+
+
+
+/*** Grid Override ***/
+.col-3 {
+  float: right;
+}
+
+/*** Don't lose your Head(er) ***/
+
+header {
+	/* border-bottom: 2px solid #363636; */
+	margin-bottom: 10px;
+	display: block;
+}
+
+header .bottom-border {
+	height: 2px;
+	width: 100%;
+	background-color: #C8C8C8;
+}
+
+.js-score-board {
+	margin-top: -35px;
+	float: right;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+/*** Question(-able) Styles ***/
+
+/* styles for 320px wide screens */
+@media screen and (min-width: 320px) {
+
+	.appStart, .resultsContainer {
+	    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
+  	}
+
+	.questionBlock {
+  		font-size: calc(30px + 6 * ((100vw - 320px) / 680));
+  		margin-bottom: 90px !important; /* Throwing !important to override normal positioning*/
+  		line-height: calc(35px + 6 * ((100vw - 320px) / 680));
+	}
+
+	input[type=button].js-quiz-start, button.js-quiz-start {
+ 		line-height: calc(40px + 6 * ((100vw - 320px) / 680));
+ 		margin-top: 20px;
+ 		vertical-align: middle;
+ 		font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+ 		padding-bottom: 2px;
+ 	}
+
+
+	progress:before {
+		content: attr(data-small_label);
+		color: #000;
+		font-weight: bold;
+    	position: relative;
+    	text-align: center;
+    	top: 50px;
+    }
+
+  	header h1 {
+		height: 43px;
+		width: 100%;
+		color: #000;
+		font-size: calc(24px + 6 * ((10vw - 320px) / 680));
+		font-weight: 700;
+		line-height: 43px;
+		margin-bottom: 0px;
+	}
+
+  	header p{
+		margin-top: 0px;
+		margin-bottom: calc(24px+ 6 * ((100vw - 320px) / 680));
+		height: 27px;
+		color: #000;
+		font-size: 20px;
+		font-style: italic;
+		font-weight: 200;
+		line-height: 27px;
+	}
+
+} /* end 320px block */
+
+/* styles for 640px wide screens */
+@media screen and (min-width: 640px) {
+
+  .questionBlock, .appStart, .resultsContainer {
+    font-size: 30px;
+  }
+
+    header h1 {
+		height: 43px;
+		width: 100%;
+		color: #000;
+		font-size: 43px;
+		font-weight: 700;
+		line-height: 43px;
+		margin-bottom: 0px;
+	}
+
+	  header p{
+		margin-top: 0px;
+		margin-bottom: 22px;
+		height: 27px;
+		color: #000;
+		font-size: 20px;
+		font-style: italic;
+		font-weight: 200;
+		line-height: 27px;
+	}
+
+	  progress:before {
+		content: attr(data-label);
+		color: #FFFFFF;
+		font-weight: bold;
+	    position: relative;
+	    top: 23px;
+	    left: 70px;
+	}
+ } /* end 640 block */
+
+
+@media screen and (min-width: 1000px) {
+
+  .questionBlock, .appStart, .resultsContainer {
+    font-size: 30px;
+  }
+
+  progress:before {
+	content: attr(data-label);
+	color: #FFFFFF;
+	font-weight: bold;
+    position: relative;
+    top: 23px;
+    left: 70px;
+	}
+ } /* end 1000px block*/
+
+.questionBlock, .questionIcon, .appStart, .resultsContainer {
+
+	display: inline-block;
+	height: 250px;
+	padding: 15px;
+	margin-bottom: 25px;
+
+
+}
+
+.questionBlock, .appStart, .resultsContainer {
+	width: calc(200%/3);
+	/* Find the box.
+	border: 2px solid teal;
+	border-radius: 5px; */
+	font-weight: 700;
+}
+
+.questionIcon, .js-results-icon {
+	float: right;
+	width: calc(100%/3);
+	/* Find the box.
+	border:2px solid aqua;
+	border-radius: 50px; */
+	background-repeat: no-repeat;
+	background-size:75%;
+	background-position: center;
+}
+
+.questionIcon img, .js-results-icon img {
+	max-width: 215px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*** Style the Buttons and their various states here ***/
+
+input[type=button], button {
+	width: 100%;
+	height: 89px;
+	background-color: #c8c8c8;
+	border: 1px solid #8C8C8C;
+	border-radius: 12px;
+	padding: 5px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	margin: 5px 0px 5px 0px;
+	/* box-shadow: 3px 3px 4px black; */
+
+	font-size: calc(35px + 6 * ((100vw - 320px) / 680));
+	font-weight: 600;
+}
+
+input[type=button].js-quiz-start, button.js-quiz-start {
+	display: block;
+	margin-left:auto;
+	margin-right: auto;
+	width: 100%;
+	height: 89px;
+	background-color: #63df57;
+	color: white;
+	border: 1px solid #3a9930;
+	border-radius: 12px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	font-size: calc(35px + 6 * ((100vw - 320px) / 680));
+	font-weight: 600;
+}
+
+input[type=button]:hover, button:hover{
+	 border: none;
+     box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2),0 0 0 1px rgba(0,0,0,0.08);
+     cursor: pointer;
+     padding-bottom: 2px;
+}
+
+
+input[type=button].js-correct-style, button.js-correct-style {
+	border: 1px solid #3a9930;
+	background-color: #63df57;
+	color: white;
+}
+
+input[type=button].js-correct-style, button.js-incorrect-style{
+	border: 1px solid #a02828;
+	background-color: #ff5050;
+	color: white;
+}
+
+
+/*** Progress Bar ***/
+
+progress {
+	/* Turns off browser defaults */
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	/*margin-top: 15px; */
+	height: 27px;
+	border: none;
+	width: 100%;
+}
+
+progress::-webkit-progress-bar {
+	background: rgba(0,0,0,0.5);
+	border-radius: 50px;
+	padding: 2px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Now the value part */
+
+
+
+progress::-webkit-progress-value {
+
+	border-radius: 50px;
+	/* border-bottom-left-radius: 50px; */
+	box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+	background: #6a8cff;
+
+}
+
+/* Modal Madness */
+
+.js-correct-answer-modal {
+	background-color: #63df57 !important; /* the imported css is taking precedence on the modal class. */
+	color: white;
+	font-family: 'Source Sans Pro';
+	font-size: 30px;
+	font-weight: bold;
+	border: 1px solid #3a9930;
+	border-radius: 12px;
+	padding: 5px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	margin: 5px 0px 5px 0px;
+}
+
+.js-incorrect-answer-modal {
+	background-color: #ff5050 !important;
+	color: white;
+	font-family: 'Source Sans Pro';
+	font-size: 30px;
+	font-weight: bold;
+	border: 1px solid #a02828;
+	border-radius: 12px;
+	padding: 5px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	margin: 5px 0px 5px 0px;
+}
+
+.modal a {
+	text-decoration: none;
+}
