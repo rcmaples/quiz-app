@@ -256,9 +256,9 @@ input[type=button].js-quiz-start, button.js-quiz-start {
 	margin-right: auto;
 	width: 100%;
 	height: 89px;
-	background-color: #63df57;
-	color: white;
-	border: 1px solid #3a9930;
+	background-color: #dcdcdc;
+	color: black;
+	border: 1px solid #808080;
 	border-radius: 12px;
 	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
 	font-size: calc(35px + 6 * ((100vw - 320px) / 680));
@@ -275,13 +275,13 @@ input[type=button]:hover, button:hover{
 
 input[type=button].js-correct-style, button.js-correct-style {
 	border: 1px solid #3a9930;
-	background-color: #63df57;
-	color: white;
+	background-color: #00D642;
+	color: black;
 }
 
 input[type=button].js-correct-style, button.js-incorrect-style{
 	border: 1px solid #a02828;
-	background-color: #ff5050;
+	background-color: #E00000;
 	color: white;
 }
 
@@ -322,12 +322,12 @@ progress::-webkit-progress-value {
 /* Modal Madness */
 
 .js-correct-answer-modal {
-	background-color: #63df57 !important; /* the imported css is taking precedence on the modal class. */
-	color: white;
+	background-color: #dcdcdc !important; /* the imported css is taking precedence on the modal class. */
+	color: black;
 	font-family: 'Source Sans Pro';
 	font-size: 30px;
 	font-weight: bold;
-	border: 1px solid #3a9930;
+	border: 1px solid #808080;
 	border-radius: 12px;
 	padding: 5px;
 	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
@@ -335,12 +335,12 @@ progress::-webkit-progress-value {
 }
 
 .js-incorrect-answer-modal {
-	background-color: #ff5050 !important;
-	color: white;
+	background-color: #dcdcdc !important;
+	color: black;
 	font-family: 'Source Sans Pro';
 	font-size: 30px;
 	font-weight: bold;
-	border: 1px solid #a02828;
+	border: 1px solid #808080;
 	border-radius: 12px;
 	padding: 5px;
 	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
@@ -349,4 +349,5 @@ progress::-webkit-progress-value {
 
 .modal a {
 	text-decoration: none;
+	color: #4e4e4e;
 }

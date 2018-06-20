@@ -118,13 +118,13 @@
 
 
   <!-- Response Modals; Hidden due to imported css and jquerymodal js-->
-  <div class="modal js-correct-answer-modal">
+  <div class="modal js-correct-answer-modal" role="dialog">
     <p>You got it right! You're smart :D</p>
-    <a href="#close-modal" rel="modal:close" class="js-modal-notTheLastQuestion">Next Question</a>
+    <a href="#close-modal" tabIndex="0" rel="modal:close" class="js-modal-notTheLastQuestion">Next Question</a>
   </div>
-  <div class="modal js-incorrect-answer-modal">
+  <div class="modal js-incorrect-answer-modal" role="dialog">
     <p>You got it Wrong! womp womp</p>
-    <a href="#close-modal" rel="modal:close" data-label="incorrect" class="js-modal-notTheLastQuestion">Next Question</a>
+    <a href="#close-modal" tabIndex="0" rel="modal:close" data-label="incorrect" class="js-modal-notTheLastQuestion">Next Question</a>
   </div>
 
   <script src="./app.js"></script>

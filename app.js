@@ -225,12 +225,12 @@ Form Submission Handlers
 			$('.js-correct-answer-modal')
 				.addClass('js-modal-lastQuestion')
 				.removeClass('js-modal-notTheLastQuestion')
-				.html(`<p>Good Job!</p><a href="#close-modal" rel="modal:close">End Game</a>`)
+				.html(`<p>Good Job!</p><a href="#close-modal" tabIndex="0" rel="modal:close">End Game</a>`)
 				.modal({escapeClose: false, clickClose: false});
 				$('.js-questions-unhidden').removeClass('js-questions-unhidden').addClass('js-questions-hidden');
 		} else {
 			$('.js-correct-answer-modal')
-				.html(`<p>Good Job!</p><a href="#close-modal" rel="modal:close">Next Question</a>`)
+				.html(`<p>Good Job!</p><a href="#close-modal" tabIndex="0" rel="modal:close">Next Question</a>`)
 				.modal({escapeClose: false, clickClose: false});
 			$('.js-questions-unhidden').removeClass('js-questions-unhidden').addClass('js-questions-hidden');
 		}
@@ -252,7 +252,7 @@ Form Submission Handlers
 				.removeClass('js-modal-notTheLastQuestion')
 				.html(`<p>Sorry!</p>
 						<p>The answer we were looking for was ${store[0].results[whichQuestion].correct_answer}.</p>
-						<a href="#close-modal" rel="modal:close">End Game</a>`)
+						<a href="#close-modal" tabIndex="0" rel="modal:close">End Game</a>`)
 				.modal({escapeClose: false, clickClose: false});
 				$('.js-questions-unhidden').removeClass('js-questions-unhidden').addClass('js-questions-hidden');
 
@@ -260,7 +260,7 @@ Form Submission Handlers
 			$('.js-incorrect-answer-modal')
 				.html(`<p>Sorry!</p>
 						<p>The answer we were looking for was ${store[0].results[whichQuestion].correct_answer}.</p>
-						<a href="#close-modal" rel="modal:close">Next Question</a>`)
+						<a href="#close-modal" tabIndex="0" rel="modal:close">Next Question</a>`)
 				.modal({escapeClose: false, clickClose: false});
 				$('.js-questions-unhidden').removeClass('js-questions-unhidden').addClass('js-questions-hidden');
 		}
