@@ -1,3 +1,5 @@
 backup-app.js
 .DS_Store
 *.studio
+node_modules
+dist

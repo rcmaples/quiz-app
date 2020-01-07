@@ -1,0 +1,24 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "View live here. [rcmaples.io/quiz-app](https://www.rcmaples.io/quiz-app/)",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcmaples/quiz-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcmaples/quiz-app/issues"
+  },
+  "homepage": "https://github.com/rcmaples/quiz-app#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "parcel-bundler": "^1.12.4"
+  }
+}
